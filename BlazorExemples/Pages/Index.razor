@@ -1,7 +1,28 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<h1>@Mensage</h1>
+<h2>@Message()</h2>
+<button @onclick =" Update">Click</button>
+@code{
+    Boolean t = true;
+    private string Mensage { get; set; } = "How are you, Frederico";
+    private string Message()
+    {
+        return "Aprendendo Blazor";
+    }
+    private void Update()
+    {
 
-Welcome to your new app.
+        if (t)
+        {
+            Mensage = "Not too bad";
+            t = false;
+        }
+        else
+        {
+            Mensage = "How are you, Frederico";
+            t = true;
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+        }
+    }
+}
